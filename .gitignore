@@ -5,7 +5,6 @@ __pycache__/
 
 # C extensions
 *.so
-key/library-management-syste-e335a-firebase-adminsdk-cdbp7-2d270f681d.json
 
 # Distribution / packaging
 .Python
