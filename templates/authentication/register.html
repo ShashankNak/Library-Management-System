@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glassmorphism Login Form</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const flashMessage = "{{ get_flashed_messages()[0] }}";
+      if (flashMessage) {
+        alert(flashMessage);
+      }
+    });
+  </script>
 </head>
 <body>
   <div class="wrapper">

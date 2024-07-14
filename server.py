@@ -149,23 +149,26 @@ def logout():
 def register():
     form = RegistrationForm()
 
-    if form.validate_on_submit():
-        email = form.email.data
-        password = form.password.data
-        role = form.role.data
-        user = auth.create_user(email=email, password=password)
-        db.collection(f"{role}s").document(user.uid).set(
-            {"email": email, "id": user.uid}
-        )
-        db.collection("userData").document(user.uid).set(
-            {"email": email, "id": user.uid,"role":role,"name":"","age":"","gender":"","genre":[],"address":""}
-        )
-        return redirect(url_for("login"))
-    else:
-        for field, errors in form.errors.items():
-            for error in errors:
-                print(f"Error in {field}: {error}")
-                flash(f"Error in {field}: {error}")
+    try:
+        if form.validate_on_submit():
+            email = form.email.data
+            password = form.password.data
+            role = form.role.data
+            user = auth.create_user(email=email, password=password)
+            db.collection(f"{role}s").document(user.uid).set(
+                {"email": email, "id": user.uid}
+            )
+            db.collection("userData").document(user.uid).set(
+                {"email": email, "id": user.uid,"role":role,"name":"","age":"","gender":"","genre":[],"address":""}
+            )
+            return redirect(url_for("login"))
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    print(f"Error in {field}: {error}")
+                    flash(f"Error in {field}: {error}")
+    except:
+        flash("Email already in use")
 
     return render_template("authentication/register.html", form=form)
     
@@ -266,6 +269,7 @@ def issueBook():
         'isRetured': False
     })
     flash('Book Issued successfully!')
+    send_email(user['email'])
     return jsonify({'message': 'Book Issued successfully'})
 
 @app.route('/return_book', methods=['POST'])
