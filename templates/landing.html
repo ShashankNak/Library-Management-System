@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Public Library</h1>
+        <div class="user-actions">
+            <!-- <span class="user-name">Tangible Bee</span> -->
+            <i class="fas fa-bell"></i>
+            <form action="/register">
+                <button class="signout" onclick="">Login/Register</button>
+            </form>
+        </div>
+    </header>
+    <div class="container">
+        
+        <main>
+            <section class="search-books">
+                <h2>Search the books available in Library</h2>
+                <input type="text" placeholder="Odoo Development" id="search-input">
+                <button id="search-btn">Search</button>
+            </section>
+            <section class="book-lists">
+               
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+</body>
+
+</html>

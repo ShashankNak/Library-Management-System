@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Public Library</h1>
+        <div class="user-actions">
+            <span class="user-name">Tangible Bee</span>
+            <i class="fas fa-bell"></i>
+            <button class="signout">Signout</button>
+        </div>
+    </header>
+    <div class="container">
+        
+        <main>
+            <section class="search-books">
+                <h2>Search the books available in Library</h2>
+                <input type="text" placeholder="Odoo Development" id="search-input">
+                <button id="search-btn">Search</button>
+            </section>
+            <section class="book-lists">
+                
+                <div class="trending">
+                    <h2>Library</h2>
+                    {% for book in books %}
+                    <div class="book-card">
+                        <img src="{{ book.volumeInfo.imageLinks.thumbnail if book.volumeInfo.imageLinks else 'default-cover.jpg' }}" alt="Book Cover">
+                        <div class="book-details">
+                            <h3>{{ book.volumeInfo.title }}</h3>
+                            <p>{{ book.volumeInfo.authors|join(', ') }} - {{ book.volumeInfo.publishedDate }}</p>
+                            <p class="genre">Genre: {{ book.volumeInfo.categories|join(', ') if book.volumeInfo.categories else 'Unknown' }}</p>
+                            <div class="description">
+                                <p>{{ book.volumeInfo.description[:100] if book.volumeInfo.description else 'No description available' }}...</p>
+                                <p class="more-text">{{ book.volumeInfo.description[100:] if book.volumeInfo.description else '' }}</p>
+                            </div>
+                            <a href="#" class="read-more">Read More</a>
+                            <button class="action-btn issue-book-btn"
+                                    data-isbn="{{ book['volumeInfo'].get('industryIdentifiers', [{'identifier': 'N/A'}])[0]['identifier'] }}">Issue
+                                    Book</button>
+                                <button class="action-btn return-book-btn" data-isbn="{{ book['volumeInfo'].get('industryIdentifiers', [{'identifier': 'N/A'}])[0]['identifier'] }}">Return Book</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

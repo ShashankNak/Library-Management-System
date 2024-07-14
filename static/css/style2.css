@@ -1,0 +1,233 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+.edit-btn, .action-btn {
+    background-color: #ffbe00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact h3 {
+    margin-top: 20px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.book-management {
+    margin-top: 20px;
+}
+
+.book-history{margin-top: 20px;
+}
+
+.history{
+    width: 70%;
+    height: 200px;
+    margin-top: 20px;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+.search-books, .my-books {
+    margin-bottom: 20px;
+}
+
+.search-books h2, .my-books h2 {
+    margin: 0 0 10px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#search-btn {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.book-card img {
+    width: 80px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.book-details {
+    flex: 1;
+}
+
+.book-details h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.book-details p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.book-details .tag {
+    background-color: #e1e6ff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #4a4a8a;
+}
+
+.book-details button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+.book-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 150px; /* Initial height */
+}
+
+.book-card img {
+    width: 80px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.book-details {
+    flex: 1;
+    height: 200px; /* Set the height of the div */
+    overflow-y: scroll; /* Add vertical scrollbar */
+    border: 1px solid #faf7f7; /* Optional: just to visualize the div */
+    margin-top: 30px;
+    
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.book-details::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.book-details {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.book-details h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.book-details p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.book-details .genre {
+    background-color: #e1e6ff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #4a4a8a;
+    margin-bottom: 10px;
+}
+
+.book-details .description {
+    display: none;
+    font-size: 14px;
+    color: #555;
+}
+
+.book-details .more-text {
+    display: none;
+}
+
+.book-details .read-more {
+    color: #2196f3;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.book-details button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+

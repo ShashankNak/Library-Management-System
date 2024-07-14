@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const flashMessage = "{{ get_flashed_messages()[0] }}";
+      if (flashMessage) {
+        alert(flashMessage);
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <form id="loginForm" action="" method="post">
+      <h2>Login</h2>
+      {{ form.hidden_tag() }}
+      <div class="input-field">
+        {{ form.email }}
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        {{ form.password }}
+        <label>Enter your password</label>
+      </div>
+      <div class="user-type">
+        {{ form.role }}
+      </div>
+      {{ form.submit }}
+      <div class="register">
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
