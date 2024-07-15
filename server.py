@@ -24,17 +24,17 @@ from firebase_admin import credentials, auth, firestore, initialize_app
 
 
 config = {
-  "apiKey": "AIzaSyDnKwYRRv1439vzWl820KM8ngHSQMg8DTo",
-  "authDomain": "library-management-syste-e335a.firebaseapp.com",
-  "projectId": "library-management-syste-e335a",
-  "storageBucket": "library-management-syste-e335a.appspot.com",
-  "messagingSenderId": "284102247060",
-  "appId": "1:284102247060:web:98bb3628cef50463b8ea81",
-  "measurementId": "G-X4853BJFX1",
+  "apiKey": "",
+  "authDomain": "",
+  "projectId": "",
+  "storageBucket": "",
+  "messagingSenderId": "",
+  "appId": "",
+  "measurementId": "",
   "databaseURL": ""
 }
 
-api_key = 'AIzaSyDn30bxls0zxJEHYyc4TRjUDS0aIQVpjPY'
+api_key = ''
 
 firebase = pyrebase.initialize_app(config)
 firebaseAuth = firebase.auth()
@@ -42,13 +42,13 @@ firebaseAuth = firebase.auth()
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "your_secret_key_here"
 cred = credentials.Certificate(
-    "key/library-management-syste-e335a-firebase-adminsdk-cdbp7-2d270f681d.json"
+    "key/"
 )
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'sukarvumare@gmail.com'  # Use your actual Gmail address
-app.config['MAIL_PASSWORD'] = 'ruto wjwc xwrl zsox'     # Use your generated App Password
+app.config['MAIL_USERNAME'] = ''  # Use your actual Gmail address
+app.config['MAIL_PASSWORD'] = ''     # Use your generated App Password
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
