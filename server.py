@@ -45,7 +45,7 @@ cred = credentials.Certificate(
     "key/"
 )
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_SERVER'] = ''
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = ''  # Use your actual Gmail address
 app.config['MAIL_PASSWORD'] = ''     # Use your generated App Password
