@@ -45,8 +45,8 @@ cred = credentials.Certificate(
     "key/"
 )
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
+app.config['MAIL_SERVER'] = ''
+app.config['MAIL_PORT'] = 
 app.config['MAIL_USERNAME'] = ''  # Use your actual Gmail address
 app.config['MAIL_PASSWORD'] = ''     # Use your generated App Password
 app.config['MAIL_USE_TLS'] = True
@@ -225,7 +225,7 @@ def booksAPI(query):
 def send_email(email):
     msg = Message(
         subject='Hello from the other side!', 
-        sender='sukarvumare@gmail.com',  # Ensure this matches MAIL_USERNAME
+        sender='',  # Ensure this matches MAIL_USERNAME
         recipients=[email]  # Replace with actual recipient's email
     )
     msg.body = "Hey, sending you this email from my Flask app, let me know if it works."
